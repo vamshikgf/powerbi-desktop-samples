@@ -1,0 +1,15 @@
+import { Selector } from 'testcafe';
+
+fixture`Login Test`
+    .page`https://beta.deepthought.education/login`; 
+
+test('Login Test', async t => {
+    const usernameInput = Selector('#username');
+    const passwordInput = Selector('#password');
+    const loginButton = Selector('#login'); 
+
+    await t
+        .typeText(usernameInput, 'abcxzd')
+        .typeText(passwordInput, '45@abcd')
+        .click(loginButton)
+});
